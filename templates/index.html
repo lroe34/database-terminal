@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="wrap">        
+    <div id="back-button-container">
+            <h1 class="h1">{% block title %} Select Table {% endblock %}</h1>
+          </div>
+    <div id = 'main'>
+    {% for item in available %}<div id='card-wrapper'><div id = "title"><h2 id="h2"><span class="material-symbols-rounded">database</span>
+        {{item[0]}}</h2></div><form class="form" method="POST" action="/database" name="value">
+    
+        
+    <div>
+        
+        
+        {% for x in item[1] %}
+        <button class="btn" name="value" value="{{ item[0] }},{{x}}"><span class="material-symbols-rounded">
+            table
+            </span>  {{x}}<div class="button-wrapper"><span class="material-symbols-rounded">
+            chevron_right
+            </span></div></button>
+        {% endfor %}
+
+    </div>
+
+    </form>
+    </div>
+    {% endfor %}
+</div>
+</div>
+    <div id="footer">
+        <p><i>Connected to {{host}}:{{port}} as {{username}}</i></p>
+    </div>
+{% endblock %}
