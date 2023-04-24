@@ -24,3 +24,7 @@ Furthermore, the drop tables function works, but it shouldbe noted that it will 
 - graceful drop table
 - cleaner UI
 - document code better
+
+
+Note:
+    I left the sakila examples and my own examples in the root directory, I hope this is ok since I have the program just search here for uploading the files rather than seeking them out in subdirectories. The examples I provide are .sql files I found online and work pretty well for testing. Similar to sakila, 01_mysql_create.sql must be run before any of 02-13 can be run since it build the table structure.

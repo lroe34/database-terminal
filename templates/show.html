@@ -29,7 +29,9 @@
             <h1>{{ filename }} <div class="tooltip"><span class="material-symbols-rounded">
                 info
                 </span>
-                <span class="tooltiptext"><i>Program may require restart for new data to appear</i></span>
+                <span class="tooltiptext"><i>Program may require restart for new data to appear. Also, functions that require special delimiters will be skipped! <span class="material-symbols-rounded">
+                    warning
+                    </span></i></span>
               </div></h1>        <div class="form_div">
             <button type="submit" name="value" value='{{filename}},{{username}},{{port}},{{host}},{{password}}'>Submit</button>
         </div>{% for line in doc %}

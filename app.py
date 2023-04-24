@@ -97,7 +97,7 @@ def home():
     # Open and read the file as a single buffer
 
     if filename:
-      fd = open(filename, 'r', encoding="utf-8")
+      fd = open('filename', 'r', encoding="utf-8")
       sqlFile = fd.read()
       fd.close()
 
