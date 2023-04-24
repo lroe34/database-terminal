@@ -3,7 +3,7 @@
 {% block content %}
 <div id="wrap">        
     <div id="back-button-container">
-            <h1 class="h1">{% block title %} Select Table {% endblock %}</h1>
+            <h1 class="h1" ><a href="https://youtu.be/zKYp1t0-xYw?t=1982" target="_blank">{% block title %} Select Table {% endblock %}</a></h1>
           </div>
     <div id = 'main'>
     {% for item in available %}<div id='card-wrapper'><div id = "title"><h2 id="h2"><span class="material-symbols-rounded">database</span>
@@ -14,7 +14,7 @@
         
         
         {% for x in item[1] %}
-        <button class="btn" name="value" value="{{ item[0] }},{{x}}"><span class="material-symbols-rounded">
+        <button class="btn" name="value" value="{{ item[0] }} , {{x}}"><span class="material-symbols-rounded">
             table
             </span>  {{x}}<div class="button-wrapper"><span class="material-symbols-rounded">
             chevron_right
@@ -29,6 +29,12 @@
 </div>
 </div>
     <div id="footer">
+        <form method="POST" action="/new">
+        <button id="add"><span class="material-symbols-rounded">
+            add
+            </span></button></form>
         <p><i>Connected to {{host}}:{{port}} as {{username}}</i></p>
+
     </div>
 {% endblock %}
+

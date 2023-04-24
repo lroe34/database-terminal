@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %} Upload {% endblock %}</title>
+</head>
+<style>
+</style>
+<body type="new">
+  <header>
+    
+    
+    <div id="back-button-container">
+      <a href="javascript:history.back()" class="back-button">Back</a>
+      <div class="title-wrapper">
+      <h1 class="h1">Review</h1>
+      
+
+</div>
+    </div>
+  </header>
+
+  <main>
+    <div id = 'main'>
+        <div id='card-wrapper'>
+           
+          <form type="new" class="form" method="POST" action="{{ url_for('home') }}" name="value">
+            <h1>{{ filename }} <div class="tooltip"><span class="material-symbols-rounded">
+                info
+                </span>
+                <span class="tooltiptext"><i>Program may require restart for new data to appear</i></span>
+              </div></h1>        <div class="form_div">
+            <button type="submit" name="value" value='{{filename}},{{username}},{{port}},{{host}},{{password}}'>Submit</button>
+        </div>{% for line in doc %}
+            <p>{{line}}</p>
+        {% endfor %}
+            
+
+          </form>
+
+        
+
+    </div>
+</div>
+  </main>
+
+</body>
+</html>
+{% endblock %}

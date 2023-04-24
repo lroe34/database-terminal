@@ -6,9 +6,8 @@
   <title>{% block title %} {{ table }} {% endblock %}</title>
 </head>
 <style>
-
 </style>
-<body>
+<body type="database">
   <header>
     
     
@@ -16,30 +15,33 @@
       <a href="javascript:history.back()" class="back-button">Back</a>
       <div class="title-wrapper">
       <h1 class="h1">{{ table }}</h1>
-        <form class="menu" method='POST'action="/table_menu" name="action">
+        <form class="menu" method='POST' action="/table_menu" name="action">
           <li>
             <h1 class="h1">
             <span class="material-symbols-rounded">
               expand_circle_down
               </span></h1>
             <ul class="dropdown-menu">
-              <button class='filter' name="value" value="filter">Filter<span class="material-symbols-rounded">
+              <button class='filter' name="value" value="{{'filter' }},{{ table }}">Filter<span class="material-symbols-rounded">
                 filter_alt
                 </span></button>
-              <button class='delete' name="value" value="drop">Drop Table<span class="material-symbols-rounded">
+              <button class='delete' name="value" value="{{'drop'}},{{ table }}, {{ db }}">Drop Table<span class="material-symbols-rounded">
                 delete_forever
                 </span></button>
 
             </ul>
           </li>
         </form>
+
 </div>
     </div>
   </header>
 
   <main>
     <div id="table-container">
-    <table id="table">
+    <table id="table">          {% for name in field_names %}
+      <th>{{ name }}</th>
+      {% endfor %}
       <tbody>
 
         

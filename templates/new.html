@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %} Upload {% endblock %}</title>
+</head>
+<style>
+</style>
+<body type="new">
+  <header>
+    
+    
+    <div id="back-button-container">
+      <a href="javascript:history.back()" class="back-button">Back</a>
+      <div class="title-wrapper">
+      <h1 class="h1">Upload</h1>
+      
+
+</div>
+    </div>
+  </header>
+
+  <main>
+    <div id = 'main'>
+        <div id='card-wrapper'>
+
+          <form type="new" class="form" method="POST" action="/show">
+            
+            <!--<input type="file" id="myFile" name="filename"> /-->
+            
+            <input id="file-upload" type="file" name="filename"/>
+
+            <div class="form_div"><input type="submit"></div>
+            
+          </form>
+
+        
+
+    </div>
+</div>
+  </main>
+
+</body>
+</html>
+{% endblock %}
